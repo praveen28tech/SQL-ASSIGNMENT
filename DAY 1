@@ -1,0 +1,13 @@
+
+Create a Database named E-Commerce, Create a table as Amazon with product_id,Product_name,price and Qty
+
+create database ECommerce;
+
+create table Amazon(
+product_id int,
+Product_name varchar(15),
+price double ,
+qty int
+);
+
+select* from Amazon;

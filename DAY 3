@@ -1,0 +1,36 @@
+Create database e_commerce;
+use e_commerce;
+create table shopping(
+product_id int auto_increment primary key,
+product_name varchar(20),
+price float,qty int,
+manufacturing_date date);
+
+INSERT INTO shopping (product_name, price, qty, manufacturing_date) VALUES
+('Laptop', 55000, 10, '2026-01-15');
+INSERT INTO shopping (product_name, price, qty, manufacturing_date) VALUES
+('Mouse', 500, 100, '2026-02-10'),
+('Keyboard', 1200, 80, '2026-03-05'),
+('Monitor', 15000, 25, '2026-01-20'),
+('Printer', 8000, 15, '2026-04-12'),
+('Scanner', 6500, 12, '2026-02-18'),
+('Speaker', 2500, 40, '2026-03-25'),
+('Headphones', 1800, 50, '2026-05-01'),
+('Webcam', 2200, 35, '2026-04-08'),
+('Pendrive', 700, 120, '2026-01-28'),
+('Hard Disk', 4500, 30, '2026-02-14'),
+('SSD', 6000, 20, '2026-03-10'),
+('Router', 3000, 18, '2026-05-05'),
+('Projector', 35000, 8, '2026-04-15'),
+('Tablet', 22000, 12, '2026-01-30'),
+('Smartphone', 28000, 22, '2026-03-18'),
+('Smartwatch', 7000, 28, '2026-02-22'),
+('Power Bank', 1500, 60, '2026-04-25'),
+('Charger', 800, 90, '2026-05-12'),
+('UPS', 5000, 14, '2026-03-28');
+
+SELECT product_name, MAX(price) AS Max_Price FROM shopping GROUP BY product_name;
+SELECT product_name, MIN(price) AS Min_Price FROM shopping GROUP BY product_name;
+SELECT MAX(price) AS Maximum_Price FROM shopping;
+SELECT MIN(price) AS Minimum_Price FROM shopping;
+SELECT * FROM shopping;

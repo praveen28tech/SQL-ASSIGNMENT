@@ -1,0 +1,29 @@
+use e_commerce;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    subject VARCHAR(30),
+    mark FLOAT,
+    course VARCHAR(20)
+);
+
+
+INSERT INTO students (name, subject, mark, course) VALUES
+('Arjun', 'Java', 88.5, 'BCA'),
+('Sneha', 'Python', 76.0, 'BSc'),
+('Kiran', 'Java', 91.2, 'BCA'),
+('Divya', 'Database', 69.5, 'BCom'),
+('Rahul', 'Python', 84.8, 'BSc'),
+('Anjali', 'Java', 95.0, 'BCA'),
+('Manoj', 'Database', 72.4, 'BCom'),
+('Keerthi', 'Python', 89.6, 'BSc'),
+('Vijay', 'Java', 81.3, 'BCA'),
+('Nisha', 'Database', 78.9, 'BCom');
+
+
+SELECT * FROM students WHERE mark > (SELECT AVG(mark)  FROM students);
+
+SELECT * FROM students WHERE mark IN (SELECT mark FROM students WHERE mark > 50);
+
+SELECT * FROM students;

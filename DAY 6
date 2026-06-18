@@ -1,0 +1,37 @@
+use e_commerce;
+
+CREATE TABLE students(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20),
+    subject VARCHAR(20),
+    mark FLOAT,
+    course VARCHAR(20)
+);
+
+INSERT INTO students(name, subject, mark, course) VALUES
+('Arjun', 'Java', 88.5, 'BCA'),
+('Sneha', 'Python', 76.0, 'BSc'),
+('Kiran', 'Java', 91.2, 'BCA'),
+('Divya', 'Database', 69.5, 'BCom'),
+('Rahul', 'Python', 84.8, 'BSc'),
+('Anjali', 'Java', 95.0, 'BCA'),
+('Manoj', 'Database', 72.4, 'BCom'),
+('Keerthi', 'Python', 89.6, 'BSc'),
+('Vijay', 'Java', 81.3, 'BCA'),
+('Nisha', 'Database', 78.9, 'BCom'),
+('Prakash', 'Python', 65.7, 'BSc'),
+('Lavanya', 'Java', 93.8, 'BCA'),
+('Sathish', 'Database', 87.1, 'BCom'),
+('Meena', 'Python', 74.2, 'BSc'),
+('Gokul', 'Java', 82.5, 'BCA'),
+('Harini', 'Database', 90.4, 'BCom'),
+('Rohit', 'Python', 68.3, 'BSc'),
+('Aarthi', 'Java', 86.7, 'BCA'),
+('Dinesh', 'Database', 79.5, 'BCom'),
+('Swathi', 'Python', 92.6, 'BSc');
+
+SELECT * FROM students WHERE mark > (  SELECT AVG(mark) FROM students);
+
+SELECT * FROM students WHERE mark IN ( SELECT mark  FROM students  WHERE mark > 80);
+
+SELECT * FROM students;

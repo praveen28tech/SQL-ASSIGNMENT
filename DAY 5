@@ -1,0 +1,46 @@
+use e_commerce;
+CREATE TABLE shoppings (
+    product_name VARCHAR(20),
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    price FLOAT
+);
+
+INSERT INTO shoppings (product_name, price) VALUES
+('Rice', 55.00),
+('Sugar', 48.00),
+('Tea', 180.00),
+('Coffee', 420.00),
+('Oil', 210.00);
+
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT,
+    order_status VARCHAR(20),
+    shipping_detail VARCHAR(20)
+);
+
+INSERT INTO orders (product_id, order_status, shipping_detail) VALUES
+(1, 'Delivered', 'Home Delivery'),
+(2, 'Shipped', 'Express Service'),
+(1, 'Processing', 'Packing'),
+(3, 'Pending', 'Awaiting Stock'),
+(4, 'Delivered', 'Standard Service');
+
+
+SELECT shoppings.product_name, orders.shipping_detail FROM shoppings LEFT JOIN orders ON shoppings.product_id = orders.product_id;
+
+SELECT shoppings.product_name, orders.shipping_detail FROM shoppings RIGHT JOIN orders ON shoppings.product_id = orders.product_id;
+
+SELECT shoppings.product_name, orders.shipping_detail FROM shoppings INNER JOIN orders ON shoppings.product_id = orders.product_id;
+
+SELECT shoppings.product_name, orders.shipping_detail
+FROM shoppings
+LEFT JOIN orders
+ON shoppings.product_id = orders.product_id
+
+UNION
+
+SELECT shoppings.product_name, orders.shipping_detail
+FROM shoppings
+RIGHT JOIN orders
+ON shoppings.product_id = orders.product_id;

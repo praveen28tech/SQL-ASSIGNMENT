@@ -1,0 +1,20 @@
+Create database e_commerce;
+use e_commerce;
+create table bank
+(cust_id int auto_increment primary key,
+cust_name varchar(20),bank_balance decimal(10,2),
+active_status varchar(15));
+
+insert into bank(cust_name,bank_balance,active_status)values('SRIDHAR',4500,'active'),
+('PRAVEEN V',370,'active'),
+('DHANUSH',16000.34,'active'),(
+'VIJAY',487,'active'),
+('SRIDHAR',3000,'active'),
+('VIJAY KUMAR',1738.22,'active'),
+('SANGEE',7830,'active'),
+('ABI',580,'active'),
+('ESAKKI',0,'active');
+
+update bank set active_status='inactive' where bank_balance<500;
+delete from bank where bank_balance= 0 and active_status ='inactive';
+select*from bank;
